@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>test chrome camera api </title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var gum = mode => navigator.mediaDevices.getUserMedia({
+				video: {
+					facingMode: {
+						exact: mode
+					}
+				}
+			}).then(stream => (video.srcObject = stream)).catch(e => log(e));
+			var stop = () => video.srcObject && video.srcObject.getTracks().forEach(t => t.stop());
+			var log = msg => div.innerHTML += msg + "<br>";
+		</script>
+		<button onclick="stop();gum('user')">Front</button>
+		<button onclick="stop();gum('environment')">Back</button>
+		<div id="div"></div><br>
+		<video id="video" height="320" autoplay></video>
+		<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+	</body>
+
+</html>
