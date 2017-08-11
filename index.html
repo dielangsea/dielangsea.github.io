@@ -1,10 +1,51 @@
 <html>
- <head>
- 	<title>web bluetooth test</title>
- </head>
- <body>
-  <script src="https://www.puck-js.com/puck.js"></script>
-  <button onclick="Puck.write('LED1.set();\n');">On!</button>
-  <button onclick="Puck.write('LED1.reset();\n');">Off!</button>
- </body>
+
+	<head>
+		<title>web bluetooth test</title>
+	</head>
+
+	<body>
+		<script src="https://www.puck-js.com/puck.js"></script>
+		<button onclick="Puck.write('LED1.set();\n');">On!</button>
+		<button onclick="Puck.write('LED1.reset();\n');">Off!</button>
+	</body>
+	<script type="text/javascript">
+		// Discovery options match any devices advertising:
+		// . The standard heart rate service.
+		// . Both 16-bit service IDs 0x1802 and 0x1803.
+		// . A proprietary 128-bit UUID service c48e6067-5295-48d3-8d5c-0395f61792b1.
+		// . Devices with name "ExampleName".
+		// . Devices with name starting with "Prefix".
+		//
+		// And enables access to the battery service if devices
+		// include it, even if devices do not advertise that service.
+		let options = {
+			filters: [{
+					services: ['heart_rate']
+				},
+				{
+					services: [0x1802, 0x1803]
+				},
+				{
+					services: ['c48e6067-5295-48d3-8d5c-0395f61792b1']
+				},
+				{
+					name: 'ExampleName'
+				},
+				{
+					namePrefix: 'Prefix'
+				}
+			],
+			optionalServices: ['battery_service']
+		}
+
+		navigator.bluetooth.requestDevice(options).then(function(device) {
+				console.log('Name: ' + device.name);
+				// Do something with the device.
+			})
+			.catch(function(error) {
+				console.log("Something went wrong. " + error);
+			});
+	</script>
+
 </html>
