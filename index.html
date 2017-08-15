@@ -10,14 +10,7 @@
 	<script type="text/javascript">
 		const button = document.querySelector('#the-button');
 		button.addEventListener('click', function() {
-			navigator.bluetooth.requestDevice({
-				filters: [{
-					services: ['battery_service']
-				}]
-			}).then(device => {
-				alert('Got device:', device.name);
-				alert('id:', device.id);
-			});
+			alert(navigator.bluetooth.requestDevice);
 		});
 	</script>
 
