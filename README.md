@@ -1,5 +1,5 @@
 # Metool
-![Metool icon](http://stackwaves.top/favicon.ico)
+![Metool icon](http://stackwaves.top/favicon.png)
  this is an js tool kit, including fetch, toast, debounce etc.
 
 # usage: 
