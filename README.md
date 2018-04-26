@@ -5,11 +5,11 @@
 
 # usage: 
   
-  metoo.fetch(url,cacheFlag,cb) 
+  1. metoo.fetch(url,cacheFlag,cb) 
   
-  metoo.toast(msg,delay)
+  2. metoo.toast(msg,delay)
   
-  metoo.debounce(fn,delay)
+  3. metoo.debounce(fn,delay)
   
 
 
