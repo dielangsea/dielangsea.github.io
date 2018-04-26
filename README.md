@@ -13,4 +13,4 @@
   
 
 
-# useful tool to deal with javascript without other big library.       
+ useful tool to deal with javascript without other big library.       
