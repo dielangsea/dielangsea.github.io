@@ -1,6 +1,6 @@
 # Metool
 ![Metool icon](http://stackwaves.top/favicon.png)
- this is a js tool kit, including fetch, toast, debounce etc.
+ this is a javascript tool kit, including fetch, toast, debounce etc.
 
 
 # usage: 
