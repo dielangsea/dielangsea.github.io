@@ -98,6 +98,17 @@ Tools.prototype.getCookie = function (key) {
 }
 
 /**
+* @desc get cookie.
+* @param {arg} obj
+*/
+Tools.prototype.isArray = function(arg) {
+    if (typeof arg === 'object') {
+        return Object.prototype.toString.call(arg) === '[object Array]';
+    }
+    return false;
+}
+
+/**
  * @desc Cache json object
  * @param {string} key
  * @param {string} value
