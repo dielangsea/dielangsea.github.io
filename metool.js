@@ -98,7 +98,7 @@ Tools.prototype.getCookie = function (key) {
 }
 
 /**
-* @desc get cookie.
+* @desc check arguments is array or not.
 * @param {arg} obj
 */
 Tools.prototype.isArray = function(arg) {
